@@ -21,6 +21,16 @@ public class CSP {
 		this.cons_tables = cons_tables;
 		this.domainSize = domainSize;
 	}
+
+	public HashMap<VarTuple, ConsTable> getAgentPrivateInformation(int agentId) {
+		HashMap<VarTuple, ConsTable> private_information = new HashMap<VarTuple, ConsTable>();
+		for (Entry<VarTuple, ConsTable> entry : cons_tables.entrySet()) {
+			if (entry.getKey().getJ() == agentId || entry.getKey().getI() == agentId) {
+				private_information.put(entry.getKey(), entry.getValue());
+			}
+		}
+		return private_information;
+	}
 	
 	// print a csp
 	public void print() {
