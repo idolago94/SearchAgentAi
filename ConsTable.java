@@ -20,6 +20,10 @@ public class ConsTable {
 			}
 		}
 	}
+
+	public boolean getPosition(int i, int j) {
+		return this.table[i][j];
+	}
 	
 	// print a constraint table
 	public void print(int d) {

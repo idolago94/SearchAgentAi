@@ -25,7 +25,7 @@ public class CSP {
 	public HashMap<VarTuple, ConsTable> getAgentPrivateInformation(int agentId) {
 		HashMap<VarTuple, ConsTable> private_information = new HashMap<VarTuple, ConsTable>();
 		for (Entry<VarTuple, ConsTable> entry : cons_tables.entrySet()) {
-			if (entry.getKey().getJ() == agentId || entry.getKey().getI() == agentId) {
+			if (entry.getKey().getJ() == agentId) {
 				private_information.put(entry.getKey(), entry.getValue());
 			}
 		}
