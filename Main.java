@@ -29,7 +29,7 @@ public class Main {
 			// use the csp to extract the private information of each agent
 			// HashMap<VarTuple, ConsTable> private_information = new HashMap<VarTuple, ConsTable>();
 			HashMap<VarTuple, ConsTable> private_information = csp.getAgentPrivateInformation(i);
-			Thread t = new Thread(new Agent(i, mailer, private_information));
+			Thread t = new Thread(new Agent(i, mailer, private_information, d));
 			threads.add(t);
 		}
 
