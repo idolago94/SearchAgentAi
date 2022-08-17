@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /*
  * messages communicate sending messages to each other
  */
