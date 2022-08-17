@@ -11,6 +11,7 @@ public class Agent implements Runnable {
 	private int domain;
 	private int assignment;
 	private int checkSum = 0;
+	private Reporter reporter;
 	
 	/*
 	 * constructor parameters -
@@ -18,11 +19,12 @@ public class Agent implements Runnable {
 	 * a reference to mailer
 	 * a reference to csp
 	 */
-	public Agent(int id, Mailer mailer, HashMap<VarTuple, ConsTable> constraints, int domain) {
+	public Agent(int id, Mailer mailer, HashMap<VarTuple, ConsTable> constraints, int domain, Reporter reporter) {
 		this.id = id;
 		this.mailer = mailer;
 		this.constraints = constraints;
 		this.domain = domain;
+		this.reporter = reporter;
 	}
 
 	private int getRandomAssinment() {
@@ -64,6 +66,7 @@ public class Agent implements Runnable {
 		}
 
 		System.out.println("ID: "+this.id+", assignment: "+this.assignment+", successful constraints checks: "+this.checkSum);
+		this.reporter.reportCorrectCheck(this.checkSum);
 	}
 
 }

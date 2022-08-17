@@ -22,13 +22,16 @@ public class Main {
 			mailer.put(i);
 		}		
 
+		// create reporter for results
+		Reporter reporter = new Reporter(n);
+
 		// create agents
 		ArrayList<Thread> threads = new ArrayList<Thread>();
 		for (int i = 0; i < n; i++) {
 			// use the csp to extract the private information of each agent
 			// HashMap<VarTuple, ConsTable> private_information = new HashMap<VarTuple, ConsTable>();
 			HashMap<VarTuple, ConsTable> private_information = csp.getAgentPrivateInformation(i);
-			Thread t = new Thread(new Agent(i, mailer, private_information, d));
+			Thread t = new Thread(new Agent(i, mailer, private_information, d, reporter));
 			threads.add(t);
 		}
 
