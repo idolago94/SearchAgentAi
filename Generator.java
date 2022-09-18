@@ -35,6 +35,6 @@ public class Generator {
 			}
 		}
 		
-		return new CSP(cons_tables, d);
+		return new CSP(cons_tables, d, n);
 	}
 }

@@ -1,23 +1,33 @@
+import java.util.ArrayList;
+
 /*
  * messages communicate sending messages to each other
  */
 public class Message {
-	int senderId;
-	int assignment;
-	
-	// a message should include information.
-	// you are required to add corresponding fields and constructor parameters
-	// in order to pass on that information
-	public Message(int senderId, int assignment) {
-		this.senderId = senderId;
-		this.assignment = assignment;
-	}
+    MsgTitle title = MsgTitle.CPA;
+    ArrayList<Integer> assignments = new ArrayList<Integer>();
 
-	public int getSenderId() {
-		return this.senderId;
-	}
+    public void setTitle(MsgTitle str) {
+        this.title = str;
+    }
 
-	public int getAssinment() {
-		return this.assignment;
-	}
+    public MsgTitle getTitle() {
+        return this.title;
+    }
+
+    public void setAgentAssignment(int id, int ass) {
+        this.assignments.add(ass);
+    }
+
+    public Integer getAgentAssignment(int id) {
+        return this.assignments.get(id);
+    }
+
+    public void deleteAgentAssignment(int id) {
+        this.assignments.remove(this.assignments.size() - 1);
+    }
+
+    public void print() {
+        System.out.println(this.getTitle() + " assignments=" + this.assignments.toString());
+    }
 }

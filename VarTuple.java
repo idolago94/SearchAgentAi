@@ -1,7 +1,7 @@
 
 public class VarTuple {
 
-	private int i,j;
+	private int i, j;
 
 	public VarTuple(int i, int j) {
 		this.i = i;

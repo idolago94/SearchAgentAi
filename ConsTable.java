@@ -5,12 +5,12 @@
 public class ConsTable {
 
 	private boolean[][] table;
-	
+
 	// create a constraint table with corresponding domain size and p2
 	public ConsTable(int d, double p2) {
-		
+
 		table = new boolean[d][d];
-		
+
 		for (int i = 0; i < d; i++) {
 			for (int j = 0; j < d; j++) {
 				table[i][j] = true;
@@ -21,10 +21,6 @@ public class ConsTable {
 		}
 	}
 
-	public boolean getPosition(int i, int j) {
-		return this.table[i][j];
-	}
-	
 	// print a constraint table
 	public void print(int d) {
 		for (int i = 0; i < d; i++) {
@@ -33,5 +29,9 @@ public class ConsTable {
 			}
 			System.out.println();
 		}
+	}
+
+	public boolean check(int i, int j) {
+		return table[i][j];
 	}
 }
